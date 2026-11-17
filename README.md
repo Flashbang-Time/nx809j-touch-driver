@@ -6,11 +6,7 @@ This is the touch part of my Windows-on-NX809J port. Windows PE now boots on the
 
 ## Where things stand
 
-The ARM64 driver builds and the protocol tests pass. On the phone, WinPE accepts the package, but the latest captured touch-device error is **Code 52 (`CM_PROB_UNSIGNED_DRIVER`, status `0xC0000428`)**. The PE boot configuration was missing test-signing; a corrected BCD has been prepared. A successful hardware start after that correction has not been confirmed.
-
-The current version adds startup checkpoints so the next failure should be easier to locate. Successful INF installation alone does not show that the driver started or that the controller answered.
-
-Still unverified: controller initialization, actual touch input, orientation, multitouch, cold boots, and suspend/resume.
+The ARM64 driver builds and the protocol tests pass. On the phone, WinPE accepts the package, but the latest captured touch-device error is **Code 10 (`CM_PROB_FAILED_START`)**.
 
 ## What is here
 
