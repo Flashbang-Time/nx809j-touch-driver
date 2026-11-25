@@ -16,7 +16,6 @@ The ARM64 driver builds and the protocol tests pass. On the phone, WinPE accepts
 - [Hardware notes](docs/hardware.md): board assumptions and ACPI resources.
 - [Testing notes](docs/testing.md): signing, deployment, and startup checkpoints.
 
-This is a source repository. It does not contain Windows images, vendor firmware, signing certificates or keys, or a complete UEFI port.
 
 ## Build
 
@@ -49,12 +48,6 @@ These need a C compiler and Make, not the Windows SDK:
 ```sh
 make -C tests test
 ```
-
-## Before putting it on a phone
-
-Use an NX809J with a recovery procedure you have already tested. Pair the driver with firmware exposing the resources in the hardware notes. The INF supports `ACPI\ZTE0001` and the GPIO-polling variant `ACPI\ZTE0002`.
-
-The boot chain must leave the touch power rails, SPI clocks and GENI firmware usable. This driver cannot initialize those missing dependencies by itself. Do not load it on another model just because the touchscreen or SoC looks similar.
 
 ## Help wanted
 
